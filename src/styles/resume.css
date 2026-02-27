@@ -1,0 +1,73 @@
+.resume-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg,#f6f8fb,#eef2f7);
+  font-family: system-ui;
+}
+
+.resume-card {
+  width: 520px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  font-size: 14px;
+  color: #9aa3af;
+}
+
+.steps .active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+.upload-box {
+  border: 2px dashed #cbd5e1;
+  padding: 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: block;
+  transition: .3s;
+}
+
+.upload-box:hover {
+  border-color: #2563eb;
+  background: #f8fafc;
+}
+
+.upload-box input {
+  display: none;
+}
+
+.file-name {
+  display: block;
+  margin-top: 10px;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.finish-btn {
+  margin-top: 30px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}

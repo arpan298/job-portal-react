@@ -1,38 +1,33 @@
-import { Routes, Route, Navigate } from "react-router-dom"
-import { useState } from "react"
-import Home from "./Pages/Home"
+import { Routes, Route } from "react-router-dom"
+import MyApplications from "./Pages/MyApplications"
+import Landing from "./Pages/Landing"
+import Signup from "./Pages/Signup"
 import Login from "./Pages/Login"
-
-function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(
-    localStorage.getItem("auth") === "true"
-  )
-
+import Interests from "./Pages/Interests"
+import VerifyEmail from "./Pages/VerifyEmail"
+import Profile from "./Pages/Profile"
+import Preferences from "./Pages/Preferences"
+import ResumeUpload from "./Pages/ResumeUpload"
+import Jobs from "./Pages/Jobs"
+import ApplyJob from "./Pages/ApplyJob"
+import ProfileSummary from "./Pages/ProfileSummary"
+export default function App() {
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          isLoggedIn ? (
-            <Home setIsLoggedIn={setIsLoggedIn} />
-          ) : (
-            <Navigate to="/login" />
-          )
-        }
-      />
-
-      <Route
-        path="/login"
-        element={
-          !isLoggedIn ? (
-            <Login setIsLoggedIn={setIsLoggedIn} />
-          ) : (
-            <Navigate to="/" />
-          )
-        }
-      />
+    
+    
+<Route path="/apply/:id" element={<ApplyJob />} />
+  <Route path="/applications" element={<MyApplications />} />
+      <Route path="/profile-summary" element={<ProfileSummary />} />
+      <Route path="/jobs" element={<Jobs />} />
+      <Route path="/" element={<Landing />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/interests" element={<Interests />} />
+      <Route path="/verifyemail" element={<VerifyEmail />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/preferences" element={<Preferences />} />
+      <Route path="/resume" element={<ResumeUpload />} />
     </Routes>
   )
 }
-
-export default App

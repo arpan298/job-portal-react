@@ -1,0 +1,15 @@
+.hero{
+  height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  z-index:2;
+}
+
+.hero h1{
+  font-size:90px;
+  font-weight:800;
+  letter-spacing:-2px;
+  color:#0b1f23;
+}

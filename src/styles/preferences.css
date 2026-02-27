@@ -1,0 +1,231 @@
+.pref-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg,#f6f8fb,#eef2f7);
+  font-family: system-ui;
+}
+
+.pref-card {
+  width: 520px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  font-size: 14px;
+  color: #9aa3af;
+}
+
+.steps .active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.pref-card h1 {
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+.pref-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pref-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  background: #f9fafb;
+}
+
+.pref-item h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.pref-item p {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Toggle switch */
+.toggle {
+  width: 48px;
+  height: 26px;
+  border-radius: 50px;
+  border: none;
+  background: #d1d5db;
+  position: relative;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.toggle span {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+.toggle.on {
+  background: #2563eb;
+}
+
+.toggle.on span {
+  left: 24px;
+}
+
+.save-btn {
+  margin-top: 30px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* ================================= */
+/* STEP NAVIGATION FLOAT BUTTONS */
+/* ================================= */
+
+.nav-btn{
+  position:fixed;
+  top:50%;
+  transform:translateY(-50%);
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  border:none;
+  font-size:20px;
+  font-weight:700;
+  cursor:pointer;
+  background:white;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+  transition:.25s ease;
+  z-index:50;
+}
+
+.nav-btn:hover{
+  transform:translateY(-50%) scale(1.1);
+  box-shadow:0 14px 40px rgba(0,0,0,.25);
+}
+
+.nav-btn.prev{ left:40px; }
+.nav-btn.next{ right:40px; }
+/* ================================= */
+/* ROUTE TRANSITION ANIMATION */
+/* ================================= */
+
+.route-transition{
+  animation:pageSlide .45s cubic-bezier(.22,.61,.36,1);
+}
+
+@keyframes pageSlide{
+  from{
+    opacity:0;
+    transform:translateX(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+/* ================================= */
+/* CLEAN PROFESSIONAL HEADER */
+/* ================================= */
+
+.modern-stepper{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+  margin-bottom:50px;
+  padding:0 20px;
+}
+
+.modern-stepper::before{
+  content:"";
+  position:absolute;
+  top:18px;
+  left:0;
+  right:0;
+  height:3px;
+  background:#e5e7eb;
+  border-radius:10px;
+}
+
+.modern-stepper .step-progress{
+  position:absolute;
+  top:18px;
+  left:0;
+  height:3px;
+  background:linear-gradient(90deg,#3b82f6,#6366f1);
+  border-radius:10px;
+  transition:.4s ease;
+}
+
+.modern-stepper .step{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  flex:1;
+  position:relative;
+  z-index:2;
+}
+
+.modern-stepper .step-circle{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#e5e7eb;
+  color:#6b7280;
+  font-weight:600;
+  transition:.3s ease;
+}
+
+.modern-stepper .step.active .step-circle{
+  background:linear-gradient(135deg,#3b82f6,#6366f1);
+  color:white;
+  box-shadow:0 8px 20px rgba(59,130,246,.35);
+}
+
+.modern-stepper .step.done .step-circle{
+  background:#10b981;
+  color:white;
+}
+
+.modern-stepper .step-label{
+  margin-top:8px;
+  font-size:13px;
+  color:#9ca3af;
+}
+
+.modern-stepper .step.active .step-label{
+  color:#111827;
+  font-weight:600;
+}

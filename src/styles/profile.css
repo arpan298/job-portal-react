@@ -1,0 +1,94 @@
+.onboard-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 40px 20px;
+}
+
+.onboard-card {
+  max-width: 620px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.05);
+}
+
+.onboard-card h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.sub {
+  text-align: center;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.onboard-card label {
+  display: block;
+  margin-top: 18px;
+  font-weight: 500;
+}
+
+.onboard-card input,
+.onboard-card select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.radio {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.radio button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.radio .active {
+  background: #2563eb;
+  color: white;
+  border: none;
+}
+
+.primary {
+  margin-top: 28px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.full { width: 100%; }
+
+.stepper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.stepper span {
+  color: #aaa;
+}
+
+.stepper .active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.stepper .done {
+  color: #22c55e;
+}

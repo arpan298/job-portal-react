@@ -1,58 +1,42 @@
+import { useNavigate, Link } from "react-router-dom"
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import "../styles/auth.css"
 
-const Login = ({ setIsLoggedIn }) => {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+export default function Login() {
+
   const navigate = useNavigate()
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
 
-  const handleLogin = (e) => {
-    e.preventDefault()   // 🔥 THIS STOPS PAGE REFRESH
+  const handleLogin = e => {
+    e.preventDefault()
 
-    if (!email || !password) {
-      alert("Please enter email and password")
+    if(!email || !password){
+      alert("Enter email & password")
       return
     }
 
-    localStorage.setItem("auth", "true")
-    setIsLoggedIn(true)
+    localStorage.setItem("auth","true")
 
-    navigate("/", { replace: true })   // 🔥 FORCE REDIRECT
+    const verified = localStorage.getItem("verified")
+    if(verified==="true") navigate("/home")
+    else navigate("/verifyemail")
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <form
-        onSubmit={handleLogin}
-        className="bg-gray-800 p-8 rounded w-80 space-y-4"
-      >
-        <h2 className="text-white text-2xl font-bold text-center">Login</h2>
+    <div className="auth-page">
+      <form className="auth-card" onSubmit={handleLogin}>
+        <h2>Welcome back</h2>
 
-        <input
-          type="email"
-          placeholder="Email"
-          className="w-full p-2 rounded bg-gray-700 text-white"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <input type="email" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} />
+        <input type="password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)} />
 
-        <input
-          type="password"
-          placeholder="Password"
-          className="w-full p-2 rounded bg-gray-700 text-white"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <button className="primary full">Log In</button>
 
-        <button
-          type="submit"   // 🔥 MUST be submit
-          className="w-full bg-blue-600 p-2 rounded text-white font-semibold"
-        >
-          Login
-        </button>
+        <p className="switch">
+          No account? <Link to="/signup">Sign up</Link>
+        </p>
       </form>
     </div>
   )
 }
-
-export default Login
